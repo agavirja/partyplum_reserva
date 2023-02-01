@@ -10,15 +10,10 @@ from sqlalchemy import create_engine
 
 st.set_page_config(layout="centered")
 
-#user     = st.secrets["user"]
-#password = st.secrets["password"]
-#host     = st.secrets["host"]
-#schema   = st.secrets["schema"]
-
-user     ='admin'
-password ='Aa12345678'
-host     ='data-proyect.cbpqfqlu2upq.us-east-2.rds.amazonaws.com'
-schema   ='partyplum'
+user     = st.secrets["user"]
+password = st.secrets["password"]
+host     = st.secrets["host"]
+schema   = st.secrets["schema"]
 
 @st.experimental_memo
 def data_city():
