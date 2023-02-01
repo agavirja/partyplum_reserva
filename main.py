@@ -55,7 +55,7 @@ with st.form("my_form",clear_on_submit =True):
     with col1:
         ocacioncelebracion = st.selectbox('Ocasión de Celebración',options=['CUMPLEAÑOS','BAUTIZO','PRIMERA COMUNIÓN','GRADO','BABY SHOWER'])
     with col2:
-        edadfestejado      = st.number_input('Edad festejado',min_value=0,value=3)
+        edadfestejado      = st.number_input('Edad festejado',min_value=0,value=0)
 
     col1, col2 = st.columns(2)
     with col1:
