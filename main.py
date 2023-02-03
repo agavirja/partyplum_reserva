@@ -102,6 +102,8 @@ with st.form("my_form",clear_on_submit =True):
     
     submitted = st.form_submit_button("Enviar")
     if submitted:
+        try:    valorpaquete = package[package['package']==paquete_contratado.upper()]['price'].iloc[0]
+        except: valorpaquete = 0
         clientdata = {
                       'date_insert':datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
                       'city':ciudad,
@@ -118,6 +120,17 @@ with st.form("my_form",clear_on_submit =True):
                       'date_pick_up':fecha_recogida,
                       'hour_pick_up':hora_recogida,
                       'origin':'client_form',
+                      'setup_time':"08:00 AM",
+                      'package_value':valorpaquete,
+                      'celebrated_name2':'',
+                      'celebrated_age2':0,
+                      'principal_img':"https://personal-data-bucket-online.s3.us-east-2.amazonaws.com/sin_imagen.png",
+                      'anticipo':0,
+                      'fechaanticipo':None,
+                      'anticipo2':0,
+                      'fechaanticipo2':None,
+                      'pagofinal':0,
+                      'fechapagofinal':None,
                       'aditional_info':[{'name':'Cantidad porciones de ponque (si aplica)' ,'value':cantidadporcionesponque},
                                         {'name':'Cantidad Mini postres (si aplica)','value':cantidadminipostres},
                                         {'name':'Adicionales q hayamos hablado?','value':adicionales},
